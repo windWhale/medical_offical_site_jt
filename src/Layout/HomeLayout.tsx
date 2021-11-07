@@ -14,13 +14,17 @@ export default function HomeLayout(props: IHomeLayoutProps) {
         <div className={styles['layout-container']}>
             <header className={styles['header']}>
                 <h1>LOGO</h1>
-                <nav>
-                    {
-                        routerList.map(item => (
-                            <a key={item.code} href={`#/${item.code}`}>{item.title}</a>
-                        ))
-                    }
-                </nav>
+                <label htmlFor="toggle-nav" className={styles['menuBtn']}></label>
+                <input type="checkbox" name="" id="toggle-nav"/>
+                <div className={styles['collapse']}>
+                    <nav>
+                        {
+                            routerList.map(item => (
+                                <a key={item.code} href={`#/${item.code}`}>{item.title}</a>
+                            ))
+                        }
+                    </nav>
+                </div>
             </header>
             <section className={styles['content']}>
                 {props.children}

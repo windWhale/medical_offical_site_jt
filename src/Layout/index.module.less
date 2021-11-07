@@ -1,25 +1,10 @@
-.layout-container {
-    .header {
-        height: 72px;
-        line-height: 72px;
-        background: lightblue;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 24px;
+@import url(layout.less); // 整体布局
 
-        nav a {
-            margin-left: 12px;
-        }
-    }
-
-    .content {
-        min-height: 800px;
-        background: lightcyan;
-    }
-
-    .footer {
-        height: 400px;
-        background: lightcoral;
-    }
+// 栅格系统
+// 类名：col-1、col-sx-1、col-sm-1、col-md-1
+:global {
+    @import url(common.less);
+    @import url(small-x.less) only screen and (max-width: 768px);
+    @import url(small.less) only screen and (min-width: 768px);
+    @import url(medium.less) only screen and (min-width: 960px);
 }
