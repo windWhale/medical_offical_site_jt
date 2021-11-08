@@ -1,8 +1,21 @@
+:root {
+    font-size: 12px;
+}
+
+body, dd, dl, dt, ul, li, h1, h2, h3, h4, h5 { padding: 0; margin: 0; }
+
+a, a:visited {
+    list-style: none;
+    color: #333;
+    text-decoration: none;
+}
+
 .row {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 10px;
+    gap: 0.9rem;
 }
+
 .generate-columns(12);
 
 .generate-columns(@n, @i: 1) when (@i =< @n) {
@@ -11,5 +24,3 @@
     }
     .generate-columns(@n, (@i + 1));
 }
-
-
