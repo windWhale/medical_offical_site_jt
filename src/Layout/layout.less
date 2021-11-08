@@ -1,0 +1,66 @@
+.layout-container {
+    .header {
+        position: sticky;
+        top: 0;
+        background: lightblue;
+        display: flex;
+        align-items: center;
+        padding: 20px 60px;
+        h1 {
+            margin-right: auto;
+        }
+        input {
+            display: none;
+        }
+        nav {
+            a {
+                margin-left: 60px;
+            }
+        }
+    }
+
+    .content {
+        min-height: 800px;
+        background: lightcyan;
+    }
+
+    .footer {
+        height: 400px;
+        background: lightcoral;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .layout-container {
+        .header {
+            flex-flow: row wrap;
+            padding: 20px 24px;
+            .menuBtn {
+                padding: 18px;
+                border: solid 1px #777;
+                border-radius: 4px;
+                cursor: pointer;
+                & + input {
+                    display: none;
+                }
+                & + input:checked {
+                    & + .collapse {
+                        display: block;
+                    }
+                }
+            }
+            .collapse {
+                display: none;
+                width: 100%;
+                nav {
+                    display: flex;
+                    flex-direction: column;
+                    a {
+                        margin-top: 24px;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

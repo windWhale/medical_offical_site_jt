@@ -1,0 +1,8 @@
+.generate-columns(12);
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+    .col-sm-@{i} {
+        grid-column: span @i;
+    }
+    .generate-columns(@n, (@i + 1));
+}
